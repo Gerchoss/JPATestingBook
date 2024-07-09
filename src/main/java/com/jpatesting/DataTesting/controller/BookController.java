@@ -24,7 +24,7 @@ public class BookController {
     @PostMapping("/DataTesting/book")
     public BookEntity createBook(){
         BookEntity myBook = new BookEntity();
-        myBook.setTitulo("Jurassic Park");
+        myBook.setTitle("Jurassic Park");
         myBook.setIdSaga(1L);
         myBook.setDateCreated(LocalDate.now());
         myBook.setDateModified(null);

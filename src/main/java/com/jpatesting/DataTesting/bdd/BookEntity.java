@@ -13,8 +13,8 @@ public class BookEntity {
     @Id
     private Long id;
 
-    @Column(name ="titulo", length = 50)
-    private String titulo;
+    @Column(name ="title", length = 50)
+    private String title;
 
     //join
     @Column(name = "id_saga")
@@ -33,7 +33,8 @@ public class BookEntity {
     private LocalDate datePublished;
 
     //join
-    //id_idioma
-    //id_libro_autor_mtm
-    //id_nivel_idioma
+    //id_language
+    //id_book_author_mtm
+    //id_level_lang
+    //id_book_category_mtm
 }
