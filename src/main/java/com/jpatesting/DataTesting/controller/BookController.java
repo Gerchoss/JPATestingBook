@@ -3,8 +3,7 @@ package com.jpatesting.DataTesting.controller;
 import com.jpatesting.DataTesting.bdd.BookEntity;
 import com.jpatesting.DataTesting.bdd.BookRepository;
 import jakarta.persistence.Column;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
@@ -31,5 +30,21 @@ public class BookController {
         myBook.setDatePublished(LocalDate.of(1990, 8, 8));
         BookEntity bookEntitySaved = bookRepository.save(myBook);
         return bookEntitySaved;
+    }
+
+    //ver como consultar en la base de datos.
+    @RequestMapping (value = "/DataTesting/book", method = RequestMethod.GET)
+    @ResponseBody
+    public BookEntity searchAllBook(){
+        BookEntity searchBook = new BookEntity();
+        searchBook.getTitle();
+        searchBook.getIdSaga();
+        searchBook.getDatePublished();
+        searchBook.getDateCreated();
+        searchBook.getDateModified();
+        BookEntity bookEntitySaved = (BookEntity) bookRepository.findAll();
+        return bookEntitySaved;
+
+
     }
 }

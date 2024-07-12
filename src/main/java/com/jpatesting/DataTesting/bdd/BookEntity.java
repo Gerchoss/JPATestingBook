@@ -26,11 +26,11 @@ public class BookEntity {
     @Column(name = "date_created")
     private LocalDate dateCreated;
 
-    //@Column(name = "date_modified")
-    //private LocalDate dateModified;
+    @Column(name = "date_modified")
+    private LocalDate dateModified;
 
-    //@Column(name = "date_deleted")
-    //private LocalDate dateDeleted;
+    @Column(name = "date_deleted")
+    private LocalDate dateDeleted;
 
     @Column(name = "date_published")
     private LocalDate datePublished;
