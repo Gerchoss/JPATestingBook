@@ -6,10 +6,11 @@ import jakarta.persistence.Column;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 public class BookController {
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
     public BookController(BookRepository bookRepository){
         this.bookRepository = bookRepository;
@@ -32,19 +33,9 @@ public class BookController {
         return bookEntitySaved;
     }
 
-    //ver como consultar en la base de datos.
+    //DB's consult with GET
     @RequestMapping (value = "/DataTesting/book", method = RequestMethod.GET)
-    @ResponseBody
-    public BookEntity searchAllBook(){
-        BookEntity searchBook = new BookEntity();
-        searchBook.getTitle();
-        searchBook.getIdSaga();
-        searchBook.getDatePublished();
-        searchBook.getDateCreated();
-        searchBook.getDateModified();
-        BookEntity bookEntitySaved = (BookEntity) bookRepository.findAll();
-        return bookEntitySaved;
-
-
+    public List<BookEntity> getBook() {
+        return bookRepository.findAll();
     }
 }
